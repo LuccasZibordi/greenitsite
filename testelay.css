@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #f3efe8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* SLIDE GERAL */
+.slide {
+  width: 1280px;
+  height: 720px;
+  background: #fdfaf3;
+  border: 2px solid #000;
+  position: relative;
+  overflow: hidden;
+}
+
+/* CÍRCULO COM O 1 */
+.badge-circle {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 200px;
+  height: 200px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.badge-circle span {
+  font-size: 130px;
+  font-weight: 700;
+  text-shadow: 6px 6px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* TOPO VERDE */
+.top-bar {
+  background: linear-gradient(90deg, #005023, #0c7a36);
+  height: 130px;
+  padding: 24px 40px 24px 260px; /* abre espaço pro círculo */
+  color: #ffffff;
+}
+
+.top-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-title-block {
+  text-align: left;
+}
+
+.top-title-block h1 {
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.top-subtitle {
+  font-size: 14px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Aqui você pode adicionar um ícone de folha no ::before, se quiser */
+.top-subtitle::before {
+  content: "🍃";
+  font-size: 16px;
+}
+
+/* Lado direito do topo (folha grande) */
+.top-leaf-placeholder {
+  width: 220px;
+  height: 100%;
+  border-radius: 40px 0 0 40px;
+  /* para você trocar depois por background-image */
+  background: radial-gradient(circle at 20% 20%, #e5ffb8, transparent 60%);
+}
+
+/* CONTEÚDO PRINCIPAL */
+.main-content {
+  display: grid;
+  grid-template-columns: 1.3fr 1.1fr;
+  gap: 28px;
+  padding: 32px 40px 32px 40px;
+  height: calc(100% - 130px);
+}
+
+/* ESQUERDA - GRÁFICO */
+.left-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.left-title {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Área do gráfico */
+.chart-area {
+  flex: 1;
+  background: linear-gradient(135deg, #fffdf8, #f7f1ea);
+  border-radius: 18px;
+  padding: 26px 28px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+/* Canvas do gráfico ocupa tudo dentro da área */
+.chart-area canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Referências */
+.references {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+/* DIREITA - PAINEL VERDE */
+.right-panel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.right-inner {
+  background: linear-gradient(135deg, #0a7a35, #0e8d3f);
+  border-radius: 40px 40px 40px 40px;
+  padding: 26px 32px 18px 32px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Cabeçalho do painel direito */
+.right-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Placeholder das engrenagens */
+.gears-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+/* pseudo engrenagens */
+.gears-placeholder::before,
+.gears-placeholder::after {
+  content: "⚙";
+  position: absolute;
+  font-size: 26px;
+}
+
+.gears-placeholder::before {
+  top: 6px;
+  left: 6px;
+}
+
+.gears-placeholder::after {
+  bottom: 4px;
+  right: 6px;
+}
+
+.right-title {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.right-divider {
+  margin-top: 10px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* Texto de vantagens */
+.advantages {
+  margin-top: 18px;
+}
+
+.advantages h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.advantages ul {
+  list-style: none;
+}
+
+.advantages li {
+  font-size: 15px;
+  margin: 6px 0;
+  padding-left: 16px;
+  position: relative;
+}
+
+/* bolinha branca no lugar do bullet */
+.advantages li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+/* Placeholder do desenho do técnico */
+.technician-placeholder {
+  margin-top: 10px;
+  align-self: flex-end;
+  width: 140px;
+  height: 110px;
+  border-radius: 24px 24px 0 24px;
+  background: rgba(255, 255, 255, 0.18);
+  /* Aqui você substitui por background-image depois */
+}

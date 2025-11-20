@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manutenção Preventiva</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fonte Poppins (opcional, só para ficar parecido) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="testelay.css">
+</head>
+<body>
+  <div class="slide">
+
+    <!-- CÍRCULO COM O NÚMERO -->
+    <div class="badge-circle">
+      <span>1</span>
+    </div>
+
+    <!-- TOPO VERDE -->
+    <header class="top-bar">
+      <div class="top-content">
+        <div class="top-title-block">
+          <h1>Manutenção Preventiva</h1>
+          <p class="top-subtitle">Cuide de seus produtos</p>
+        </div>
+
+        <!-- AQUI VOCÊ PODE COLOCAR A IMAGEM DA FOLHA -->
+        <div class="top-leaf-placeholder">
+          <!-- img futura -->
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+      <!-- LADO ESQUERDO: GRÁFICO -->
+      <section class="left-panel">
+        <h2 class="left-title">
+          Economia de energia estimada de um ar condicionado em manutenção preventiva
+        </h2>
+
+        <div class="chart-area">
+          <canvas id="energyChart"></canvas>
+        </div>
+
+        <p class="references">
+          Referências: NADCA / US DEPARTAMENT OF ENERGY / IESO (2024)
+        </p>
+      </section>
+
+      <!-- LADO DIREITO: CAIXA VERDE COM TEXTO -->
+      <section class="right-panel">
+        <div class="right-inner">
+
+          <div class="right-header">
+            <!-- ÍCONE DE ENGRENAGENS AQUI -->
+            <div class="gears-placeholder"></div>
+
+            <h2 class="right-title">
+              Por que realizar a<br>
+              manutenção preventiva?
+            </h2>
+          </div>
+
+          <div class="right-divider"></div>
+
+          <div class="advantages">
+            <h3>Vantagens:</h3>
+            <ul>
+              <li>Aumenta a sua performance;</li>
+              <li>Gasta menos energia;</li>
+              <li>Melhora a eficiência energética;</li>
+              <li>Evita problemas na máquina;</li>
+              <li>Prolonga a vida útil do produto.</li>
+            </ul>
+          </div>
+
+          <!-- ILUSTRAÇÃO DO TÉCNICO AQUI -->
+          <div class="technician-placeholder"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- CHART.JS (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- SCRIPT DO GRÁFICO INTERATIVO -->
+  <script>
+    const ctx = document.getElementById('energyChart').getContext('2d');
+
+    const energyChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [
+          'Trocar/Limpar o filtro de ar',
+          'Limpeza Profissional'
+        ],
+        datasets: [{
+          data: [10, 50], // valores em %
+          backgroundColor: ['#9bf49d', '#a6f7b1'],
+          borderWidth: 0,
+          borderRadius: 14,
+          barThickness: 46
+        }]
+      },
+      options: {
+        indexAxis: 'y', // barras horizontais
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return context.raw + '% de economia de energia';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            min: 0,
+            max: 50,
+            grid: {
+              color: 'rgba(0, 0, 0, 0.06)'
+            },
+            ticks: {
+              stepSize: 10,
+              callback: function(value) {
+                return value + '%';
+              },
+              font: {
+                family: 'Poppins'
+              }
+            },
+            title: {
+              display: true,
+              text: 'Economia de energia (%)',
+              font: {
+                family: 'Poppins',
+                weight: '600',
+                size: 13
+              }
+            }
+          },
+          y: {
+            grid: {
+              display: false
+            },
+            ticks: {
+              font: {
+                family: 'Poppins',
+                size: 12
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
