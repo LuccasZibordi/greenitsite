@@ -2,11 +2,11 @@
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
-      background-image: url(leaf-8374442.jpg); /* só pra dar contraste */
+      background-image: url("img/plantaprincipal.jpg"); /* só pra dar contraste */
     }
 
     header.site-header {
-      background: linear-gradient(90deg, #11991a, #02500f);
+      background: linear-gradient(90deg, #000000,#000000, #0f8635);
       color: #fff;
       height: 100px;
       display: flex;
@@ -24,35 +24,46 @@
       justify-content: space-between;
     }
 
-    /* LOGO */
-    .logo {
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    }
-
-    .logo-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 2px;
-      position: relative;
-    }
-
-    .logo img {
-  height: 48px; /* ajusta o tamanho que ficar melhor */
-  display: block;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.7)); /* SOMBRA PRETA */
-  transition: transform 0.2s ease, filter 0.2s ease;
-  cursor: pointer;
-      }
-    /* HOVER: aumenta um pouco e intensifica a sombra */
-.logo:hover img {
-  transform: scale(1.08);
-  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.85));
+/* HEADER (se já tiver, só ajuste o justify-content/altura) */
+.site-header {
+  background: linear-gradient(90deg, #0f8b1f, #0c6e1a); /* barra verde */
+  border-bottom: 2px solid #d9a95b;                     /* faixa dourada */
+  height: 80px;
 }
 
-    /* Logo “estilizada” tipo prêmio */
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* CENTRALIZA a logo no meio */
+}
+
+/* LOGO CENTRALIZADA */
+/* header mais alto pra caber a logo maior */
+.site-header {
+  background: linear-gradient(90deg, #1add34, #04914a);
+  border-bottom: 2px solid #d9a95b;
+  height: 110px;          /* antes 80px */
+}
+
+/* LOGO maior e sem sombra */
+.hero-logo-xx img {
+  height: 200px;           /* aumenta aqui o tamanho da logo */
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+/* HOVER só com zoom, sem sombra */
+.hero-logo-xx:hover img {
+  transform: scale(1.08);
+}
+
+
+
 
     /* NAV */
     nav.main-nav {
@@ -114,7 +125,7 @@
     /* ====== FOOTER ====== */
 
 .site-footer {
-  background: linear-gradient(90deg,  #44c659, #00520e);
+  background: linear-gradient(90deg,#0b8b47, #043609);
   color: #ffffff;
   padding: 80px 0 40px;
   border-top: 2px solid #d9a95b; /* linha douradinha em cima opcional */
@@ -144,25 +155,27 @@
   gap: 24px;
 }
 
-.footer-logo-mark {
-  width: 90px;
-  height: 90px;
-  position: relative;
+.footer-logo-mark img{
+  width: 200px;   /* aumenta/diminui pra ajustar o tamanho da logo */
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* “Desenho” estilizado da marca em laranja */
+/* remove o desenho do XX */
 .footer-logo-mark::before,
 .footer-logo-mark::after {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border-left: 6px solid #f6a243;
-  border-right: 6px solid #f6a243;
-  transform: skewX(-20deg);
+  content: none;
 }
-.footer-logo-mark::after {
-  transform: skewX(20deg);
+
+/* faz a imagem caber certinho dentro do bloco */
+.footer-logo-mark img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
 }
+
 
 .footer-logo-text {
   display: flex;
@@ -258,114 +271,83 @@ main {
 
 /* ====== HERO ====== */
 
+/* HERO: fundo + centralização geral */
+/* HERO – fundo continua igual, só mantendo a imagem */
 .hero {
   position: relative;
   min-height: 480px;
   background:
-    linear-gradient(120deg, rgba(0, 0, 0, 0.5), rgba(0, 40, 80, 0.6)), /* overlay escuro opcional */
-    url("/img/plantaprincipal.jpg"); /* <-- sua imagem aqui */
+    linear-gradient(120deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
+    url("img/planta.png") center/cover no-repeat; /* se tiver BG */
   display: flex;
   align-items: center;
+  color: #fff;
 }
 
 .hero-inner {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 32px 120px 30px;
-}
-
-/* bloco com “estátua” + texto */
-.hero-logo-block {
+  padding: 80px 60px 120px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 40px;
+  gap: 80px;
 }
-.hero-logo-xx {
-  height: 240px;                /* altura parecida com esse retângulo verde */
+
+/* COLUNA ESQUERDA */
+.hero-col-left {
   display: flex;
-  align-items: center;
-  justify-content: center;
-
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
 }
 
-/* garante que a logo não estoure */
-.hero-logo-xx img {
-  max-height: 100%;
+.hero-main-logo {
+  width: 360px;   /* tamanho atual da logo grande */
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
-/* placeholder do troféu (troque por imagem se quiser) */
-.hero-trophy {
-  width: 260px;
-  height: 360px;
-  border-radius: 20px;
-  background: linear-gradient(150deg, #f4a44a, #fbd0a0);
-  position: relative;
-  overflow: hidden;
-}
-.hero-trophy::after {
-  content: "";
-  position: absolute;
-  inset: 20px;
-  border-radius: 18px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  transform: skewX(-10deg);
+/* GREEN IT logo embaixo da logo */
+.hero-green-title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
 }
 
-/* logo + texto do lado direito */
-.hero-text-block {
-  max-width: 420px;
+.hero-green-subtitle {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
-.hero-logo-group {
+/* COLUNA DIREITA */
+.hero-col-right {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
 }
 
-/* Marca tipo "asa" reaproveitando o estilo do logo */
-.hero-logo-mark {
-  width: 70px;
-  height: 70px;
-  position: relative;
-}
-.hero-logo-mark::before,
-.hero-logo-mark::after {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border-left: 5px solid #ffffff;
-  border-right: 5px solid #ffffff;
-  transform: skewX(-20deg);
-}
-.hero-logo-mark::after {
-  transform: skewX(20deg);
-}
-
+/* CYBER GREEN ENTERTAINMENT */
 .hero-logo-title {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  font-size: 30px;
+  font-size: 48px;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.hero-date {
-  margin: 24px 0 4px;
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-}
-
-.hero-location {
-  margin: 0 0 24px;
-  font-size: 14px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  opacity: 0.9;
+}
+
+/* Botões logo abaixo do nome */
+.hero-cta {
+  display: flex;
+  gap: 16px;
 }
 
 /* Botões principais */
@@ -384,10 +366,6 @@ main {
   cursor: pointer;
 }
 
-.hero-cta {
-  display: flex;
-  gap: 14px;
-}
 
 .btn-gold {
   background: #f4a44a;
@@ -442,8 +420,7 @@ main {
   justify-content: space-between;
 }
 
-.section-header h2,
-.explore-section > h2 {
+.section-header h2 {
   font-size: 26px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -456,6 +433,110 @@ main {
   padding: 10px 20px;
   font-size: 11px;
 }
+
+
+
+/* ====== SEÇÕES GREEN IT ====== */
+
+.greenit-sections {
+  margin-top: 60px;
+}
+
+/* bloco base de cada seção */
+.gi-section {
+  padding: 70px 0;
+}
+
+.gi-dark {
+  background: #050910;
+  color: #ffffff;
+}
+
+.gi-light {
+  background: #ffffff;
+  color: #101010;
+}
+
+/* layout interno */
+.gi-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* imagem grande ocupando metade da largura */
+.gi-image {
+  flex: 1;
+  min-height: 280px;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* coloca as imagens (troque pelos caminhos reais) */
+.gi-img1 {
+  background-image: url("img/oqqe.png");
+}
+
+.gi-img2 {
+  background-image: url("img/importancia.png");
+}
+
+.gi-img3 {
+  background-image: url("img/onde.png");
+}
+
+/* texto ocupa a outra metade */
+.gi-text {
+  flex: 1;
+}
+
+.gi-text h2 {
+  font-size: 28px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.gi-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 540px;
+}
+
+/* alternância de posição imagem/texto */
+.gi-layout-left .gi-inner {
+  flex-direction: row;
+}
+
+.gi-layout-right .gi-inner {
+  flex-direction: row;
+}
+
+/* responsivo */
+@media (max-width: 900px) {
+  .gi-inner {
+    flex-direction: column;
+  }
+
+  .gi-layout-right .gi-inner {
+    flex-direction: column; /* em mobile fica tudo igual, empilhado */
+  }
+
+  .gi-image {
+    width: 100%;
+  }
+
+  .gi-text p {
+    max-width: 100%;
+  }
+}
+
 
 /* ====== NEWS (SCROLL LATERAL) ====== */
 
@@ -639,6 +720,18 @@ main {
   .explore-section {
     padding-inline: 20px;
   }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 60px 24px 80px;
+  }
+
+  .hero-main-logo {
+    width: 260px;
+  }
+
 }
 
 
