@@ -1,0 +1,748 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #02070d;
+  color: #ffffff;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+
+.site-header {
+  background: linear-gradient(90deg, #000000, #000000, #d2d2d2);
+  color: #fff;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #d9a95b;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-logo-xx img {
+  height: 200px;
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.hero-logo-xx:hover img {
+  transform: scale(1.08);
+}
+
+/* NAV */
+nav.main-nav {
+  display: flex;
+  gap: 32px;
+  flex: 1;
+  justify-content: center;
+}
+
+nav.main-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+nav.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transform: translateX(-50%);
+  transition: width 0.2s ease;
+}
+
+nav.main-nav a:hover::after,
+nav.main-nav a.active::after {
+  width: 60%;
+}
+
+/* ================= SEÇÃO 1 – FRASE ================= */
+
+main {
+  flex: 1;
+}
+
+.energy-hero {
+  background: url("/sitegreenit/img/carbono.png") no-repeat center top;
+  background-size: cover;
+  padding: 70px 32px 90px;   /* não muito longe do header */
+}
+
+.energy-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #ffffff;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
+}
+
+.energy-hero-inner h1 {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.energy-hero-inner p {
+  max-width: 520px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ================= SEÇÃO 2 – TEXTO/IMAGEM ================= */
+
+.energy-intro {
+  background: #050a10;
+  padding: 70px 32px 80px;
+}
+
+.energy-intro-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.energy-intro-image img {
+  width: 100%2;
+  display: block;
+  border-radius: 22px;
+  box-shadow: 0 26px 50px rgba(0, 0, 0, 0.7);
+}
+
+.energy-intro-text h2 {
+  font-size: 1.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.energy-intro-text p {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+/* ====== FAIXA SUB-HERO ====== */
+
+.hero-strip {
+  background: #050608;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-strip-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 14px 32px;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.strip-separator {
+  width: 26px;
+  height: 2px;
+  background: #f4a44a;
+}
+
+/* ================= SEÇÃO 3 – CARDS ================= */
+
+.energy-cards {
+  background: #f5f5f5;
+  padding: 150px 32px 100px;
+  color: #ffffff; /* texto interno dos cards continua branco */
+}
+
+.tips-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.tips {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+/* CARD */
+.tip {
+  position: relative;
+  flex: 1;
+  max-width: 300px;
+  min-height: 540px;
+  background: linear-gradient(180deg,#949494, #474747);
+  border-radius: 30px;
+  padding: 165px 28px 60px;
+  text-align: center;
+  box-shadow: 0 22px 36px rgba(0, 0, 0, 0.4);
+  transform-origin: center bottom;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+  cursor: pointer;
+}
+
+.tip:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 28px 46px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.06);
+}
+
+.tip::before {
+  content: "";
+  position: absolute;
+  top: 125px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 52px;
+  background: #5a5a5a;
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+/* NÚMERO */
+.tip-number {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #707a74;
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.45);
+  border: 12px solid #474747;
+}
+
+.tip-number::after {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  border-radius: 50%;
+  border: 2px solid rgba(11, 95, 46, 0.25);
+}
+
+.tip h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #ffffff;
+  margin-top: 26px;
+}
+
+.tip-icon {
+  font-size: 3.5rem;
+  margin-top: 42px;
+}
+
+/* ===== BLOCO SECRETO ANTES DO FOOTER ===== */
+
+/* =========================
+   LINHAS SECRETAS + PAINÉIS
+   ========================= */
+
+.tips-secret {
+  background: #ffffff;
+  /* mesmo respiro lateral das outras sections */
+  padding: 60px 48px 48px;
+}
+
+/* 5 linhas “secretas” */
+.tips-secret-lines {
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* mais espaçadas */
+}
+
+.secret-line {
+  width: 100%;
+  height: 3px;
+  background: #000000;
+  border-radius: 999px;
+  opacity: 0.22;
+  transform-origin: center;
+  transform: scaleX(1);
+  transition:
+    opacity 0.25s ease,
+    transform 0.4s ease;
+}
+
+/* linha do card ativo */
+.secret-line.active {
+  opacity: 0.9;
+  transform: scaleX(1.03);
+}
+
+/* contêiner dos painéis */
+.tips-secret-panels {
+  max-width: 1400px;   /* mesmo width da seção GREEN IT */
+  margin: 0 auto;
+}
+
+/* painel “secreto” (um por dica) */
+.secret-panel {
+  display: none;
+  margin-top: 0;
+}
+
+.secret-panel.active {
+  display: block;
+}
+
+/* ====== CARTÃO VERDE GRANDÃO ====== */
+
+.secret-panel-card {
+  width: 100%;
+  min-height: 430px; /* deixa o painel bem alto */
+  padding: 32px 42px 42px;
+  border-radius: 32px;
+  background: white;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.38);
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* cabeçalho: badge + título + espaço pra ícone */
+.secret-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.secret-tip-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #f6a243;
+  border: 4px solid #f6a243;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.6rem;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+}
+
+.secret-tip-title h3 {
+  font-size: 1.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.secret-tip-title p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.secret-tip-icon-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 28px;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  opacity: 0.8;
+}
+
+/* corpo: gráfico à esquerda, texto à direita
+   ocupando bem a largura (igual ao GREEN IT) */
+.secret-panel-body {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr; /* gráfico maior */
+  gap: 36px;
+  align-items: stretch;
+}
+
+/* BLOCO DO GRÁFICO */
+.secret-panel-chart {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 24px;
+  padding: 22px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.secret-panel-chart h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.secret-panel-chart canvas {
+  width: 100% !important;
+  height: 260px !important; /* deixa o gráfico grandão */
+}
+
+.chart-source {
+  font-size: 0.76rem;
+  opacity: 0.8;
+}
+
+/* BLOCO DE TEXTO + ÁREA PARA IMAGEM */
+.secret-panel-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.secret-panel-info h4 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.secret-panel-info h5 {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 6px;
+}
+
+.secret-panel-info ul {
+  margin-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.92rem;
+}
+
+.secret-info-image-placeholder {
+  margin-top: auto;
+  border-radius: 24px;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  opacity: 0.85;
+  padding: 16px 18px;
+  text-align: center;
+}
+
+/* RESPONSIVO */
+@media (max-width: 960px) {
+  .secret-panel-body {
+    grid-template-columns: 1fr;
+  }
+
+  .secret-panel-card {
+    padding: 24px 20px 28px;
+  }
+
+  .secret-tip-badge {
+    width: 52px;
+    height: 52px;
+    font-size: 1.3rem;
+  }
+
+  .secret-panel-chart canvas {
+    height: 220px !important;
+  }
+}
+
+
+/* cabeçalho: número + título + ícone */
+.secret-panel-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.secret-tip-badge {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 4px solid #f6a243;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: #ffffff;
+  color: #0b5f2e;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.secret-tip-title h3 {
+  font-size: 1.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.secret-tip-title p {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.secret-tip-icon-placeholder {
+  width: 84px;
+  height: 84px;
+  border-radius: 24px;
+  border: 1px dashed rgba(255, 255, 255, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  text-align: center;
+  padding: 6px;
+  opacity: 0.7;
+}
+
+/* corpo: duas colunas (gráfico + texto) */
+.secret-panel-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+  gap: 26px;
+}
+
+/* GRÁFICO */
+.secret-panel-chart h4 {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.secret-panel-chart {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 22px;
+  padding: 16px 18px 14px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+
+.secret-panel-chart canvas {
+  width: 100%;
+  max-height: 260px;
+}
+
+.chart-source {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  opacity: 0.8;
+}
+
+/* TEXTO + PLACEHOLDER DE IMAGEM */
+.secret-panel-info h4 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.secret-panel-info h5 {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  opacity: 0.95;
+}
+
+.secret-panel-info ul {
+  padding-left: 18px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.secret-panel-info li + li {
+  margin-top: 3px;
+}
+
+.secret-info-image-placeholder {
+  margin-top: 4px;
+  border-radius: 18px;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* RESPONSIVO */
+@media (max-width: 960px) {
+  .secret-panel-body {
+    grid-template-columns: 1fr;
+  }
+
+  .secret-panel-card {
+    padding: 18px 18px 20px;
+  }
+
+  .secret-panel-chart canvas {
+    max-height: 220px;
+  }
+}
+
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+  background: linear-gradient(90deg, #b8b8b8, #000000, #000000);
+  color: #ffffff;
+  padding: 80px 0 40px;
+  border-top: 2px solid #d9a95b;
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-logo-mark img {
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f6a243;
+}
+
+.footer-links {
+  display: flex;
+  gap: 32px;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copy {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 1100px) {
+  .energy-intro-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .energy-intro-image {
+    order: -1;
+  }
+
+  .tips {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tip {
+    max-width: 280px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .energy-hero-inner h1 {
+    font-size: 2.4rem;
+  }
+
+  nav.main-nav {
+    gap: 16px;
+    font-size: 10px;
+  }
+
+  .hero-logo-xx img {
+    height: 120px;
+  }
+}
+
+/* ------- QUADRO DA ANIMAÇÃO GREEN IT E ESG ------- */
+
+.energy-intro-image {
+  /* garante que o bloco da esquerda tenha proporção de “card” */
+  max-width: 640px;        /* ajusta se quiser maior/menor */
+
+}
+
+.esg-iframe {
+  width: 100%;
+  aspect-ratio: 3 / 2;     /* parecido com 494x329 do print */
+  border: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  display: block;
+  background: #000;
+  box-shadow: 0 26px 50px rgba(0, 0, 0, 0.7);
+}

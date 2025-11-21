@@ -550,6 +550,15 @@ main {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+
+.news-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;       /* mantém as cores do layout */
+  height: 100%;
 }
 
 /* Troca os caminhos das imagens pelos seus arquivos reais */
@@ -601,6 +610,18 @@ main {
   line-height: 1.5;
   opacity: 0.85;
 }
+
+/* HOVER SIMPLES */
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+.news-card:hover .news-image {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
 
 /* ====== EXPLORE ====== */
 
