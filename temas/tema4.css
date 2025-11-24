@@ -93,7 +93,7 @@ main {
 }
 
 .energy-hero {
-  background: url("/sitegreenit/img/lixo.jpg") no-repeat center top;
+  background: url("/sitegreenit/img/trash.png") no-repeat center top;
   background-size: cover;
   padding: 70px 32px 90px;   /* não muito longe do header */
 }
