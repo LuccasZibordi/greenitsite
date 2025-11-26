@@ -2,7 +2,7 @@
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
-      background-image: url("img/plantaprincipal.jpg"); /* só pra dar contraste */
+      background-image: url("plantaprincipal.jpg"); /* só pra dar contraste */
     }
 
     header.site-header {
@@ -243,7 +243,7 @@ main {
   min-height: 480px;
   background:
     linear-gradient(120deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
-    url("img/planta.png") center/cover no-repeat; /* se tiver BG */
+    url("planta.png") center/cover no-repeat; /* se tiver BG */
   display: flex;
   align-items: center;
   color: #fff;
@@ -445,15 +445,15 @@ main {
 
 /* coloca as imagens (troque pelos caminhos reais) */
 .gi-img1 {
-  background-image: url("img/oqqe.png");
+  background-image: url("oqqe.png");
 }
 
 .gi-img2 {
-  background-image: url("img/importancia.png");
+  background-image: url("importancia.png");
 }
 
 .gi-img3 {
-  background-image: url("img/onde.png");
+  background-image: url("onde.png");
 }
 
 /* texto ocupa a outra metade */
@@ -563,33 +563,33 @@ main {
 
 /* Troca os caminhos das imagens pelos seus arquivos reais */
 .news-image.img1 {
-  background-image: url("img/lampada.png");
+  background-image: url("lampada.png");
 }
 
 .news-image.img2 {
-  background-image: url("img/fumaça.jpg");
+  background-image: url("fumaça.jpg");
 }
 
 .news-image.img3 {
-  background-image: url("img/agua.png");
+  background-image: url("agua.png");
 }
 
 .news-image.img4 {
-  background-image: url("img/lixoeletronico.png");
+  background-image: url("lixoeletronico.png");
 }
 
 .news-image.img5 {
-  background-image: url("img/amareloia.jpg");
+  background-image: url("amareloia.jpg");
 }
 
 .news-image.img6 {
-  background-image: url("img/rosio.png");
+  background-image: url("rosio.png");
 }
 .news-image.img7 {
-  background-image: url("img/circula.png");
+  background-image: url("circula.png");
 }
 .news-image.img8 {
-  background-image: url("img/roxo.png");
+  background-image: url("roxo.png");
 }
 
 
